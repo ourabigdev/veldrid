@@ -27,7 +27,7 @@ namespace Veldrid.D3D11
             SampleCount = description.SampleCount;
 
             DxgiFormat = D3D11Formats.ToDxgiFormat(description.Format, description.Usage);
-            
+
             CpuAccessFlags cpuFlags = CpuAccessFlags.None;
             ResourceUsage resourceUsage = ResourceUsage.Default;
             BindFlags bindFlags = BindFlags.None;

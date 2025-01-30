@@ -1201,7 +1201,7 @@ namespace Veldrid.D3D11
                 pAdjustedSrcData = (byte*)data - region.Left;
             }
 
-            _context.UpdateSubresource(resource, subresource, region, (IntPtr)pAdjustedSrcData, 0, 0);
+            _context.UpdateSubresource(resource, (int)subresource, region, (IntPtr)pAdjustedSrcData, 0, 0);
         }
 
 
@@ -1279,12 +1279,12 @@ namespace Veldrid.D3D11
 
                 _context.CopySubresourceRegion(
                     dstD3D11Texture.DeviceTexture,
-                    dstSubresource,
+                    (int)dstSubresource,
                     (int)dstX,
                     (int)dstY,
                     (int)dstZ,
                     srcD3D11Texture.DeviceTexture,
-                    srcSubresource,
+                    (int)srcSubresource,
                     region);
             }
         }

@@ -88,7 +88,7 @@ namespace Veldrid.D3D11
                         out device).CheckError();
                 }
             }
-            
+
             ID3D11Device? device;
             try
             {
@@ -110,7 +110,7 @@ namespace Veldrid.D3D11
                 AdapterDescription desc = _dxgiAdapter.Description;
                 DeviceName = desc.Description;
                 VendorName = "id:" + ((uint)desc.VendorId).ToString("x8");
-                _deviceId = desc.DeviceId;
+                _deviceId = (int)desc.DeviceId;
             }
 
             switch (_device.FeatureLevel)
